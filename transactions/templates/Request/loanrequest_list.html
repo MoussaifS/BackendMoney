@@ -1,0 +1,17 @@
+<h1>Loan Requests</h1>
+{% for loan in object_list %}
+<div class="loan-card">
+   <ul>
+       <li>Borrower: {{ loan.borrower.username }}</li>
+       <li>Amount: ${{ loan.amount }}</li>
+       <li>Duration: {{ loan.duration }}</li>
+       <li>Status: {{ loan.status }}</li>
+       <li>Interest Rate: {{ loan.interest_rate }}%</li>
+       <li>Payment Frequency: {{ loan.payment_frequency }}</li>
+       {% if loan.status == 'APPROVED' %}
+           <li>Lender: {{ loan.lender.username }}</li>
+           <li>Total Payable: ${{ loan.total_payable }}</li>
+       {% endif %}
+   </ul>
+</div>
+{% endfor %}
