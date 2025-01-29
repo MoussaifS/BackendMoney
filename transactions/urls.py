@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import LoanRequestListView
+from .views import TransactionRequestListView
 
 urlpatterns = [
-    path('', LoanRequestListView.as_view(), name='home')
+    path('', TransactionRequestListView.as_view(), name='home')
 ]
 

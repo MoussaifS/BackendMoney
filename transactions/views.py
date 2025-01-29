@@ -1,9 +1,7 @@
 from django.shortcuts import render
-from .models import LoanRequest
+from .models import TransactionRequest
 from django.views.generic import ListView
-# Create your views here.
 
-
-class LoanRequestListView(ListView):
-    model = LoanRequest
-    template_name = 'loanrequest_list.html'
+class TransactionRequestListView(ListView):
+    model = TransactionRequest
+    template_name = 'transactionrequest_list.html'

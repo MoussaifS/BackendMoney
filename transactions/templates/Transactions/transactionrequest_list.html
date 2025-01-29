@@ -1,0 +1,16 @@
+<h1>Transaction Requests</h1>
+{% for transaction in object_list %}
+<div class="transaction-card">
+   <ul>
+       <li>Borrower: {{ transaction.borrower.username }}</li>
+       <li>Lender: {{ transaction.lender.username }}</li>
+       <li>Total Payable: ${{ transaction.total_payable }}</li>
+       <li>Duration: {{ transaction.duration }}</li>
+       <li>Status: {{ transaction.status }}</li>
+       <li>Payment Method: {{ transaction.payment_method }}</li>
+       {% if transaction.status == 'APPROVED' %}
+           <li>Amount Paid: ${{ transaction.amount_paid }}</li>
+       {% endif %}
+   </ul>
+</div>
+{% endfor %}
